@@ -59,7 +59,9 @@ void Polygon::Add(double x, double y){
 	Y_Ordered.push_back(y);
 
 	int n = N();
-	Point p1 = Vertexes[n-1]-Vertexes[n-2];
+	Point p1;
+	if (n == 1) p1 = Vertexes[n-1]; 
+	else p1 = Vertexes[n-1]-Vertexes[n-2]; 
 	Point p2 = Vertexes[n-1]-Vertexes[0];
 	double tmp1 = p1[1] ? p1[0]/p1[1] : 0;
 	double tmp2 = p2[1] ? p2[0]/p2[1] : 0;
